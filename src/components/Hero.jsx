@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import setting_on_tabel from "../assets/setting_on_tabel.svg";
 
 const stats = [
   { value: "4",    label: "Expert Developers" },
@@ -41,16 +42,12 @@ export default function Hero() {
       }}
     >
       <div className="container">
+        {/* Main two-column layout */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "4rem",
-          }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16"
         >
-          {/* Top content */}
-          <div style={{ maxWidth: "820px" }}>
-
+          {/* Left side - Text content */}
+          <div>
             {/* Eyebrow */}
             <div data-reveal className="eyebrow" style={{ marginBottom: "1.75rem" }}>
               Web Development Agency · India
@@ -135,6 +132,37 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Right side - SVG Illustration */}
+          <div
+            data-reveal
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={setting_on_tabel}
+              alt="Developer illustration"
+              style={{
+                width: "100%",
+                maxWidth: "550px",
+                height: "auto",
+                filter: "drop-shadow(0 20px 40px rgba(0, 229, 160, 0.15))",
+                animation: "float 4s ease-in-out infinite"
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Stats and scroll indicator section */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "4rem",
+          }}
+        >
           {/* Stats row */}
           <div
             data-reveal
@@ -245,6 +273,11 @@ export default function Hero() {
           0%   { transform: translateY(0);   opacity: 1; }
           60%  { transform: translateY(10px); opacity: 0.2; }
           100% { transform: translateY(0);   opacity: 1; }
+        }
+        @keyframes float {
+           0% { transform: translateY(0px); }
+           50% { transform: translateY(-12px); }
+           100% { transform: translateY(0px); }
         }
       `}</style>
     </section>
