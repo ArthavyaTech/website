@@ -6,6 +6,8 @@ import Portfolio from "./components/Portfolio";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import TechStack from "./components/TechStack";
+
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -80,6 +82,7 @@ export default function App() {
           <Hero />
           <Services />
           <Portfolio />
+          <TechStack />
           <Team />
           <Contact />
         </main>
